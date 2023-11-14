@@ -58,9 +58,10 @@ def check(node: CallExpr, errors: list[Error]) -> None:
                     case BytesExpr() | StrExpr():
                         pass
 
-                    case NameExpr(node=Var(type=ty)) if (
-                        str(ty) in ("builtins.str", "builtins.bytes")
-                    ):
+                    case NameExpr(node=Var(type=ty)) if str(ty) in {
+                        "builtins.str",
+                        "builtins.bytes",
+                    }:
                         pass
 
                     case _:

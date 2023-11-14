@@ -121,14 +121,14 @@ def parse_python_version(version: str) -> tuple[int, int]:
 
 
 def validate_format(format: str) -> Literal["github", "text"]:
-    if format in ("github", "text"):
+    if format in {"github", "text"}:
         return format  # type: ignore
 
     raise ValueError(f'refurb: "{format}" is not a valid format')
 
 
 def validate_sort_by(sort_by: str) -> Literal["filename", "error"]:
-    if sort_by in ("filename", "error"):
+    if sort_by in {"filename", "error"}:
         return sort_by  # type: ignore
 
     raise ValueError(f'refurb: cannot sort by "{sort_by}"')

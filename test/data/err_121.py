@@ -2,9 +2,9 @@ num = num2 = 123
 
 # these will match
 
-_ = isinstance(num, float) or isinstance(num, int)
-_ = isinstance(num, (float, str)) or isinstance(num, int)
-_ = isinstance(num, (float, str)) or isinstance(num, int) or True
+_ = isinstance(num, (float, int))
+_ = isinstance(num, (float, str, int))
+_ = isinstance(num, (float, str, int)) or True
 
 
 # these will not

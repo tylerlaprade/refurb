@@ -20,14 +20,10 @@ with open("file") as f:
 # these will not
 
 with open("x") as f:
-    pass
-
     for line in lines:
         f.write(line)
 
 
 with open("x") as f:
     for line in lines:
-        pass
-
         f.write(line)

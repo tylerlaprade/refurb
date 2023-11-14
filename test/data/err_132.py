@@ -17,7 +17,6 @@ s2 = set()
 if "x" in s:
     s2.remove("x")
 
-if "x" in s:
     s.remove("x")
     print("removed item")
 

@@ -1,6 +1,6 @@
 # these will match
 
-f"{str('hello world')}"  # noqa: FURB123
+'hello world'
 
 f"{repr(123)}"
 
@@ -19,10 +19,10 @@ f"{format('hello world')}"
 
 # these will not
 
-f"{123}"
+123
 
 f"{0b1010:b}"
 
-f"{str('hello world')!s}"  # noqa: FURB123
+f"{'hello world'!s}"
 
 f"{str(b'hello world', encoding='utf8')}"

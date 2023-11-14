@@ -1,43 +1,24 @@
 # these should match
 
 def f1():
-    arr = []
-
-    for num in (1, 2, 3):
-        arr.append(num)
+    arr = [1, 2, 3]
 
 
 def f2():
-    arr = []
-
-    for num in (1, 2, 3):
-        arr.append(num + 1)
+    arr = [num + 1 for num in (1, 2, 3)]
 
 
 def f3():
-    arr = []
-
-    for num in (1, 2, 3):
-        if num % 2:
-            arr.append(num)
+    arr = [num for num in (1, 2, 3) if num % 2]
 
 
-nums = []
-
-for num in (1, 2, 3):
-    if num % 2:
-        nums.append(num)
+nums = [num for num in (1, 2, 3) if num % 2]
 
 
 # should not match
 
 def f4():
-    arr = []
-
-    for num in (1, 2, 3):
-        pass
-
-        arr.append(num)
+    arr = [1, 2, 3]
 
 
 def f5():
@@ -48,13 +29,9 @@ def f5():
 
 
 def f6():
-    # Although this should be caught, the general case for this is a bit harder
-    # then expected.
-    arr2 = []
     arr = []
 
-    for num in (1, 2, 3):
-        arr2.append(num)
+    arr2 = [1, 2, 3]
 
 
 def f7():
@@ -73,19 +50,13 @@ def f8():
 
 
 def f9():
-    arr = []
-
-    pass
-
-    for num in (1, 2, 3):
-        arr.append(num)
+    arr = [1, 2, 3]
 
 
 def f10():
     arr = [1, 2, 3]
 
-    for num in (1, 2, 3):
-        arr.append(num)
+    arr.extend(iter((1, 2, 3)))
 
 
 def f11():
@@ -99,5 +70,4 @@ def f11():
 def f12():
     arr = []
 
-    for num in (1, 2, 3):
-        arr.append(arr)
+    arr.extend(arr for _ in (1, 2, 3))

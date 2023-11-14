@@ -12,9 +12,9 @@ _ = " ".join(shlex.quote(arg) for arg in ("hello", "world"))
 _ = " ".join(quote(arg) for arg in args)
 _ = " ".join(shlex_quote(arg) for arg in args)
 
-_ = " ".join(shlex.quote(arg + "") for arg in args)
+_ = " ".join(shlex.quote(f"{arg}") for arg in args)
 _ = " ".join(shlex.quote(arg) for arg in args if arg)
-_ = " ".join(shlex.quote(arg + "") for arg in args if arg)
+_ = " ".join(shlex.quote(f"{arg}") for arg in args if arg)
 
 
 # these should not

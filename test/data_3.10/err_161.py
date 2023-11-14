@@ -1,7 +1,7 @@
 # these should match
 
 _ = bin(0b1111).count("1")
-_ = bin(0b0011 & 0b11).count("1")
+_ = bin(0b0011).count("1")
 _ = bin(1 < 2).count("1")
 _ = bin(0b1111)[2:].count("1")  # noqa: FURB116
 

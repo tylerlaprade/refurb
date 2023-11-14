@@ -2,24 +2,7 @@
 
 d = {}
 
-if "key" in d.keys():
-    pass
-
-if "key" not in d.keys():
-    pass
-
 x = "key"
-if x in d.keys():
-    pass
-
-
-# these should not
-
-if "key" in d:
-    pass
-
-if "key" not in d:
-    pass
 
 
 class NotADict:

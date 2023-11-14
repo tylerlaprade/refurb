@@ -146,7 +146,7 @@ def run_refurb(settings: Settings) -> Sequence[Error | str]:
         files, opt = process_options(args, stdout=stdout, stderr=stderr)
 
     except SystemExit:
-        lines = ["refurb: " + err for err in stderr.getvalue().splitlines()]
+        lines = [f"refurb: {err}" for err in stderr.getvalue().splitlines()]
 
         return lines + stdout.getvalue().splitlines()
 

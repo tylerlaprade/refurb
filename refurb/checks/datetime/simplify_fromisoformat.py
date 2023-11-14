@@ -58,11 +58,11 @@ def is_string(node: Expression) -> bool:
 
 
 def is_utc_timezone(timezone: str) -> bool:
-    return timezone.startswith(("+", "-")) and timezone.strip("+-") in (
+    return timezone.startswith(("+", "-")) and timezone.strip("+-") in {
         "00:00",
         "0000",
         "00",
-    )
+    }
 
 
 def check(node: CallExpr, errors: list[Error], settings: Settings) -> None:

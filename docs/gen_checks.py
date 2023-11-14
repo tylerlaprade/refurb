@@ -14,7 +14,7 @@ for module in get_modules([]):
         header = f"## {error_code}: `{error.name}`"
 
         categories = " ".join(f"`{cat}`" for cat in error.categories)
-        categories = "Categories: " + categories
+        categories = f"Categories: {categories}"
 
         body = dedent(error.__doc__ or "").strip()
         body = re.sub(r"```([\s\S]*?)```", r"```python\1```", body)

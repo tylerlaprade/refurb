@@ -1,10 +1,6 @@
 # these should match
 
-s = set()
-
-for x in (1, 2, 3):
-    s.add(x)
-
+s = {1, 2, 3}
 for x in (1, 2, 3):
     s.discard(x)
 
@@ -14,11 +10,11 @@ for x in (1, 2, 3):
 
 # these should not
 
-s.update(x for x in (1, 2, 3))
+s.update(iter((1, 2, 3)))
 
 num = 123
 
-for x in (1, 2, 3):
+for _ in (1, 2, 3):
     s.add(num)
 
 for x in (set(),):

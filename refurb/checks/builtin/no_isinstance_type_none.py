@@ -72,19 +72,19 @@ def check(node: CallExpr, errors: list[Error]) -> None:
                     if type_none_index == -1:
                         return
 
-                    if type_none_index == 0:
-                        types = "type(None) | ..."
-                    else:
-                        types = "... | type(None)"
-
+                    types = (
+                        "type(None) | ..."
+                        if type_none_index == 0
+                        else "... | type(None)"
+                    )
                 case TupleExpr(items=items):
                     for i, item in enumerate(items):
                         if is_type_none_call(item):
-                            if i == 0:
-                                types = "(type(None), ...)"
-                            else:
-                                types = "(..., type(None))"
-
+                            types = (
+                                "(type(None), ...)"
+                                if i == 0
+                                else "(..., type(None))"
+                            )
                             break
 
                     else:

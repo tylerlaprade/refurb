@@ -78,10 +78,7 @@ CONTAINER_TYPES = {
 
 def is_builtin_container_type(ty: str | None) -> bool:
     # Kept for compatibility with older Mypy versions
-    if not ty:
-        return False  # pragma: no cover
-
-    return any(ty.startswith(x) for x in CONTAINER_TYPES)
+    return False if not ty else any(ty.startswith(x) for x in CONTAINER_TYPES)
 
 
 def is_builtin_container_like(node: Expression) -> bool:

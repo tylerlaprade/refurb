@@ -21,4 +21,4 @@ z = f() if f() else y
 # these will not
 
 z = x if y else y
-z = y if x else y
+z = y

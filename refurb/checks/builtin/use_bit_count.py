@@ -74,16 +74,16 @@ def check(node: CallExpr, errors: list[Error], settings: Settings) -> None:
                 case _:
                     return
 
-            if isinstance(node.callee.expr, IndexExpr):  # type: ignore
-                old = "bin(x)[2:]"
-            else:
-                old = "bin(x)"
-
-            if isinstance(arg, IntExpr | RefExpr | CallExpr | IndexExpr):
-                x = "x"
-            else:
-                x = "(x)"
-
+            old = (
+                "bin(x)[2:]"
+                if isinstance(node.callee.expr, IndexExpr)
+                else "bin(x)"
+            )
+            x = (
+                "x"
+                if isinstance(arg, IntExpr | RefExpr | CallExpr | IndexExpr)
+                else "(x)"
+            )
             errors.append(
                 ErrorInfo.from_node(
                     node, f'Replace `{old}.count("1")` with `{x}.bit_count()`'

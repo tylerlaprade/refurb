@@ -1,6 +1,6 @@
 # these will match
 
-x = list()
+x = []
 y = dict()
 z = tuple()
 i = int()
@@ -19,7 +19,7 @@ z = ()
 i = 0
 s = ""
 
-x = list((1, 2, 3))
+x = [1, 2, 3]
 y = dict((("a", 1), ("b", 2)))
 i2 = int("0xFF")
 s2 = str(123)

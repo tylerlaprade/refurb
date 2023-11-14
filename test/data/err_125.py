@@ -1,8 +1,6 @@
 # these will match
 
 def stmt_then_return():
-    pass
-
     return
 
 def match_trailing_case():
@@ -14,21 +12,10 @@ def match_trailing_case():
             return
 
 def if_trailing_return():
-    if False:
-        pass
-
-    else:
-        return
+    return
 
 def elif_trailing_return():
-    if False:
-        pass
-
-    elif False:
-        pass
-
-    else:
-        return
+    return
 
 def nested_match():
     match [123]:
@@ -80,26 +67,10 @@ def return_none():
     return None
 
 def if_with_non_trailing_node():
-    if False:
-        pass
-
-    else:
-        pass
-
     pass
 
 def nested_if_with_non_trailing_node():
-    if False:
-        pass
-
-    else:
-        if False:
-            pass
-
-        else:
-            return
-
-        pass
+    return
 
 def nested_match_with_non_trailing_node():
     match [123]:
@@ -110,8 +81,6 @@ def nested_match_with_non_trailing_node():
 
                 case _:
                     return
-
-            pass
 
 
 def match_with_early_return(x):

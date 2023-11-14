@@ -4,4 +4,4 @@ from typing import cast
 # errors instead of just one. This is fixed now, and should only return 1
 # error.
 
-cast(int, int(0))
+cast(int, 0)

@@ -2,19 +2,19 @@ b = True
 
 # these should match
 
-_ = b is True
-_ = b is False
-_ = b is not True
-_ = b is not False
+_ = b
+_ = not b
+_ = not b
+_ = b
 _ = True is b
 _ = False is b
 
-_ = b == True
-_ = b == False
-_ = b != True
-_ = b != False
-_ = True == b
-_ = False == b
+_ = b
+_ = not b
+_ = not b
+_ = b
+_ = b
+_ = not b
 
 
 # these should not

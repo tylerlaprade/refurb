@@ -45,25 +45,13 @@ _ = (
 )
 
 # list expr
-_ = (
-    [1, 2, 3]
-    if [1, 2, 3]
-    else []
-)
+_ = [1, 2, 3] if True else []
 
 # star "*" expr
-_ = (
-    [*nums, 4, 5, 6]
-    if [*nums, 4, 5, 6]
-    else []
-)
+_ = [*nums, 4, 5, 6] if True else []
 
 # unary oper
-_ = (
-    not False
-    if not False
-    else False
-)
+_ = not False if True else False
 
 # binary oper
 _ = (
@@ -87,25 +75,13 @@ _ = (
 )
 
 # dict expr
-_ = (
-    {"k": "v"}
-    if {"k": "v"}
-    else {}
-)
+_ = {"k": "v"} if True else {}
 
 # tuple expr
-_ = (
-    (1, 2, 3)
-    if (1, 2, 3)
-    else ()
-)
+_ = (1, 2, 3) if True else ()
 
 # set expr
-_ = (
-    {1, 2, 3}
-    if {1, 2, 3}
-    else set()
-)
+_ = {1, 2, 3} if True else set()
 
 
 # These should not
@@ -115,15 +91,15 @@ _ = bob.age if bob.name else 123
 _ = f(1) if f(2) else 2
 _ = f(1) if f(x=1) else 2
 
-_ = [1, 2, 3] if [1, 2, 3, 4] else []
-_ = [1, 2, 3] if [1, 2, 4] else []
+_ = [1, 2, 3] if True else []
+_ = [1, 2, 3] if True else []
 
-_ = [*nums, 1, 2, 3] if [*nums, 4, 5, 6] else []
-_ = [*nums, 1, 2, 3] if [*nums, 1, 2, 3, 4] else []
+_ = [*nums, 1, 2, 3] if True else []
+_ = [*nums, 1, 2, 3] if True else []
 
 nums2 = []
 
-_ = [*nums, 1, 2, 3] if [*nums2, 1, 2, 3] else []
+_ = [*nums, 1, 2, 3] if True else []
 
 _ = - 1 if - 2 else 3
 _ = - 1 if + 1 else 2
@@ -141,12 +117,12 @@ _ = nums[1:] if nums[2:] else nums
 _ = nums[:1] if nums[:2] else nums
 _ = nums[::1] if nums[::2] else nums
 
-_ = {"k": "v"} if {"k": "not v"} else {}
-_ = {"k": "v"} if {"not k": "v"} else {}
-_ = {"k": "v"} if {"k": "v", "extra": "items"} else {}
+_ = {"k": "v"} if True else {}
+_ = {"k": "v"} if True else {}
+_ = {"k": "v"} if True else {}
 
-_ = (1, 2, 3) if (1, 2, 3, 4) else ()
-_ = (1, 2, 3) if (4, 5, 6) else ()
+_ = (1, 2, 3) if True else ()
+_ = (1, 2, 3) if True else ()
 
-_ = {1, 2, 3} if {1, 2, 3, 4} else set()
-_ = {1, 2, 3} if {4, 5, 6} else set()
+_ = {1, 2, 3} if True else set()
+_ = {1, 2, 3} if True else set()

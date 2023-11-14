@@ -1,17 +1,17 @@
 # these will match
 
-_ = bool(True)
+_ = True
 _ = bytes(b"hello world")
 _ = complex(1j)
 _ = dict({"a": 1})
-_ = float(123.456)
-_ = list([1, 2, 3])
-_ = str("hello world")
-_ = tuple((1, 2, 3))
-_ = int(123)
+_ = 123.456
+_ = [1, 2, 3]
+_ = "hello world"
+_ = 1, 2, 3
+_ = 123
 
 a = True
-_ = bool(a)
+_ = a
 
 b = b"hello world"
 _ = bytes(b)
@@ -23,13 +23,13 @@ d = {"a": 1}
 _ = dict(d)
 
 e = 123.456
-_ = float(e)
+_ = e
 
 f = [1, 2, 3]
 _ = list(f)
 
 g = "hello world"
-_ = str(g)
+_ = g
 
 t = (1, 2, 3)
 _ = tuple(t)
@@ -42,7 +42,7 @@ _ = bytes(0xFF)
 _ = complex(1)
 _ = dict((("a", 1),))
 _ = float(123)
-_ = list((1, 2, 3))
+_ = [1, 2, 3]
 _ = str(123)
-_ = tuple([1, 2, 3])
+_ = 1, 2, 3
 _ = int("0xFF")

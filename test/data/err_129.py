@@ -1,37 +1,29 @@
 # these should match
 
 with open("file.txt") as f:
-    for line in f.readlines():
-        pass
+    pass
+with open("file.txt") as f:
+    lines = [f"{line}!" for line in f.readlines()]
 
 
 with open("file.txt") as f:
     lines = [f"{line}!" for line in f.readlines()]
 
 
-with open("file.txt") as f:
-    lines = list(f"{line}!" for line in f.readlines())  # noqa: FURB137
-
-
 with open("file.txt", "rb") as f:
-    lines = list(f"{line}!" for line in f.readlines())  # noqa: FURB137
+    lines = [f"{line}!" for line in f.readlines()]
 
 
 f = open("file.txt")
-for line in f.readlines():
-    pass
-
-
 # these will not
 
 with open("file.txt") as f:
-    for line in f.readlines(1):
+    for _ in f.readlines(1):
         pass
 
 
 with open("file.txt") as f:
-    for line in f:
-        pass
+    pass
 
 
 class Reader:
@@ -39,7 +31,7 @@ class Reader:
     def readlines() -> list[str]:
         return ["hello", "world"]
 
-for line in Reader.readlines():
+for _ in Reader.readlines():
     pass
 
 

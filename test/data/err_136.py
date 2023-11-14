@@ -3,15 +3,15 @@ y = 2
 
 # these should match
 
-_ = x if x < y else y
-_ = x if x <= y else y
-_ = x if x > y else y
-_ = x if x >= y else y
+_ = min(x, y)
+_ = min(x, y)
+_ = max(x, y)
+_ = max(x, y)
 
-_ = x if y < x else y
-_ = x if y <= x else y
-_ = x if y > x else y
-_ = x if y >= x else y
+_ = max(y, x)
+_ = max(y, x)
+_ = min(y, x)
+_ = min(y, x)
 
 # these should not
 

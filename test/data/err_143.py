@@ -3,7 +3,7 @@ f = frozenset()
 l = []
 d = {}
 t = ()
-t2 = tuple((1,))  # noqa: FURB123
+t2 = (1, )
 r = ""
 b = b""
 n = False
@@ -36,7 +36,7 @@ _ = c.x or 0
 
 # these should not
 
-_ = s or set((1, 2, 3))
+_ = s or {1, 2, 3}
 _ = f or frozenset((1, 2, 3))
 _ = l or [1, 2, 3]
 _ = d or {"a": "b"}

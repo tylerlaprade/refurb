@@ -1,11 +1,7 @@
 # these will match
 
 def is_even(x):
-    if x % 2 == 0:
-        return True
-
-    else:
-        return False
+    return x % 2 == 0
 
 
 def is_even_again(x):
@@ -32,13 +28,9 @@ def nested(x):
 def match_multiple_stmts(x):
     match x:
         case 1:
-            pass
-
             return 1
 
         case 2:
-            pass
-
             return 2
 
         case _:
@@ -48,13 +40,7 @@ def match_multiple_stmts(x):
 # these will not
 
 def func(x):
-    if x == 1:
-        return True
-
-    else:
-        pass
-
-        return False
+    return x == 1
 
 def func2(x):
     match x % 2:
@@ -62,8 +48,6 @@ def func2(x):
             return True
 
         case _:
-            pass
-
             return False
 
 def func3(x):
@@ -74,10 +58,7 @@ def func3(x):
     return False
 
 def func4(x):
-    if x == 1:
-        return True
-
-    return False
+    return x == 1
 
 def func5():
     return False
@@ -99,8 +80,5 @@ def func7(x):
             return 2
 
 def func8(x):
-    if x == 1:
-        pass
-
-    else:
+    if x != 1:
         return 1

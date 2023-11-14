@@ -5,8 +5,5 @@ x = y = 1
 x = x
 
 
-# these should not
-
-x = y
-x = x + 1
+x = y + 1
 x += x

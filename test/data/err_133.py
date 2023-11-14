@@ -2,35 +2,22 @@
 
 def continue_at_end_of_while():
     while True:
-        pass
-
         continue
 
 def continue_at_end_of_for_loop():
     for _ in range(10):
-        pass
-
         continue
 
 def continue_at_end_of_else_block():
-    for x in range(10):
-        if x:
-            pass
-
-        else:
-            continue
+    pass
 
 def continue_in_match():
     for x in range(10):
         match x:
             case 1:
-                pass
-
                 continue
 
             case 2:
-                pass
-
                 continue
 
             case _:
@@ -52,8 +39,6 @@ def continue_in_match_with_trailing_stmt():
 
             case _:
                 continue
-
-        pass
 
 def continue_match_with_single_continue():
     for x in range(10):

@@ -8,19 +8,16 @@ c = C()
 
 # these should match
 
-_ = x == "abc" or x == "def"
-_ = c.y == "abc" or c.y == "def"
-_ = x == "abc" or x == "def" or x == "ghi"
+_ = x in {"abc", "def"}
+_ = c.y in ["abc", "def"]
+_ = x in {"abc", "def", "ghi"}
 _ = x == "abc" or x == "def" or y == "ghi"
 
-_ = (
-    x == "abc"
-    or x == "def"
-)
+_ = x in {"abc", "def"}
 
-_ = x == "abc" or "def" == x
-_ = "abc" == x or "def" == x
-_ = "abc" == x or x == "def"
+_ = x in {"abc", "def"}
+_ = x in {"abc", "def"}
+_ = x in {"abc", "def"}
 
 # these should not
 

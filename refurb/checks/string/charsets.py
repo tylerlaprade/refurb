@@ -86,8 +86,8 @@ def check(node: ComparisonExpr | StrExpr, errors: list[Error]) -> None:
                     )
 
         case StrExpr(value=value):
-            for name, charset in CHARSETS_EXACT.items():
-                if value == charset:  # type: ignore
-                    errors.append(
-                        ErrorInfo.from_node(node, format_error(value, name))
-                    )
+            errors.extend(
+                ErrorInfo.from_node(node, format_error(value, name))
+                for name, charset in CHARSETS_EXACT.items()
+                if value == charset
+            )

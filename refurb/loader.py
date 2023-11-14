@@ -108,10 +108,7 @@ def type_error_with_line_info(  # type: ignore
     filename = getsourcefile(func)
     line = getsourcelines(func)[1]
 
-    if not filename:
-        return TypeError(msg)  # pragma: no cover
-
-    return TypeError(f"{filename}:{line}: {msg}")
+    return TypeError(f"{filename}:{line}: {msg}") if filename else TypeError(msg)
 
 
 def extract_function_types(  # type: ignore
@@ -128,13 +125,13 @@ def extract_function_types(  # type: ignore
         )
 
     node_param = params[0].annotation
-    error_param = params[1].annotation
     optional_params = params[2:]
 
-    if not (
-        type(error_param) == GenericAlias
-        and error_param.__origin__ == list
-        and error_param.__args__[0] == Error
+    error_param = params[1].annotation
+    if (
+        type(error_param) != GenericAlias
+        or error_param.__origin__ != list
+        or error_param.__args__[0] != Error
     ):
         raise type_error_with_line_info(
             func, '"error" param must be of type list[Error]'

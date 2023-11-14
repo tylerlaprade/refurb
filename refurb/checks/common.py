@@ -177,11 +177,14 @@ def is_equivalent(lhs: Node | None, rhs: Node | None) -> bool:
 
 
 def get_common_expr_positions(*exprs: Expression) -> tuple[int, int] | None:
-    for lhs, rhs in combinations(exprs, 2):
-        if is_equivalent(lhs, rhs):
-            return exprs.index(lhs), exprs.index(rhs)
-
-    return None
+    return next(
+        (
+            (exprs.index(lhs), exprs.index(rhs))
+            for lhs, rhs in combinations(exprs, 2)
+            if is_equivalent(lhs, rhs)
+        ),
+        None,
+    )
 
 
 def get_common_expr_in_comparison_chain(

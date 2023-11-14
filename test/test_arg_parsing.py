@@ -654,9 +654,9 @@ def test_disallow_empty_string_in_cli() -> None:
         ["file.py", ""],
     ]
 
-    for test in tests:
-        msg = "refurb: argument cannot be empty"
+    msg = "refurb: argument cannot be empty"
 
+    for test in tests:
         with pytest.raises(ValueError, match=msg):
             parse_args(test)
 

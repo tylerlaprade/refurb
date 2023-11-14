@@ -14,7 +14,6 @@ def f3():
 def f4():
     global x
     global y
-    pass
     global x
     global y
 
@@ -34,7 +33,6 @@ def f2():
     def inner3():
         nonlocal x
         nonlocal y
-        pass
         nonlocal x
         nonlocal y
 
@@ -65,15 +63,12 @@ def fx():
 
     def inner2():
         nonlocal x
-        pass
         nonlocal y
 
 
 def fy():
     global x
-    pass
     global y
 
 def fz():
-    pass
     global x

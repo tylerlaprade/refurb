@@ -4,16 +4,16 @@ z = {"c": 3}
 
 # these should match
 
-_ = {**x, **y}
+_ = x | y
 _ = {**x, "b": 2}
 _ = {**x, "b": 2, "c": 3}
 _ = {"a": 1, **x}
 _ = {"a": 1, "b": 2, **x}
 _ = {"a": 1, **x, **y}
 _ = {**x, **y, "c": 3}
-_ = {**x, **y, **z}
-_ = {**x, **y, **z, **x}
-_ = {**x, **y, **z, **x, **x}
+_ = x | y | z
+_ = x | y | z | x
+_ = x | y | z | x | x
 _ = {**x, **y, **z, **x, "a": 1}
 
 from collections import ChainMap, Counter, OrderedDict, defaultdict, UserDict

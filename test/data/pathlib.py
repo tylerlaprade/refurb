@@ -13,7 +13,7 @@ with open(folder / "another_folder" / "file.txt") as f:
 
 # these should not match
 
-with open(folder + "file.txt") as f:  # type: ignore
+with open(f"{folder}file.txt") as f:  # type: ignore
     pass
 
 with open("folder" / "file.txt") as f:  # type: ignore
